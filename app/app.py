@@ -21,7 +21,7 @@ def get_dataweather():
     return df
 
 
-connection = psycopg2.connect(user = "admin",password = "admin",host = "localhost",port = "5432",database = "postgres")
+connection = psycopg2.connect(user = "admin",password = "admin",host = "db",port = "5432",database = "weatherDB")
 connection.autocommit = True
 cursor = connection.cursor()
 #SQL Code Block
