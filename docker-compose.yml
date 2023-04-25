@@ -14,10 +14,12 @@ services:
     ports:
       - 5432:5432
     healthcheck:
-      test: "exit 0"
+      test: ["CMD-SHELL", "sh -c 'pg_isready'"]
 
   app:
     container_name: weather-app
+    env_file:
+      - .env
     build: ./app/
     depends_on:
       db:
